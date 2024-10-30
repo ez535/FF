@@ -1,0 +1,228 @@
+.desktop-menu {
+    position: relative;
+    box-shadow: none;
+    background-color: #FFFFFF;
+
+    max-width: 320px;
+    width: 100%;
+
+    padding: 23px 24px 32px 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    .aside {
+        margin-top: 241px;
+    }
+
+    .close {
+        display: none;
+    }
+
+    .logo {
+        margin-left: unset;
+        transition: all .5s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .search {
+        cursor: pointer;
+    }
+}
+
+.header-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    box-shadow: 16px 0 52px 0 #0E185033, -2px 0 4px 0 #454F7E05;
+
+    height: 100vh;
+
+    overflow: auto;
+
+    .aside {
+        margin-top: auto;
+
+        &__list {
+            &:before {
+                content: unset;
+            }
+        }
+    }
+
+    &_open {
+        display: flex;
+        z-index: 10;
+
+        .close {
+            display: flex;
+        }
+
+        .logo {
+            margin-left: 43px;
+        }
+
+        &:after {
+            z-index: 9;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
+}
+
+.search {
+    margin-left: auto;
+}
+
+.nav {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &_mobile {
+        margin-top: 45px;
+
+        .nav__item {
+            font-size: $fs-medium;
+            line-height: $line-height-medium;
+        
+            position: relative;
+    
+            &.active .nav__link,
+            &:hover .nav__link {
+                color: $text-color-gray;
+            }
+
+            &.active:before,
+            &:hover:before {
+                content: '';
+                position: absolute;
+                left: -24px;
+                top: -5px;
+                background-color: $bg-color-before-h3;
+                width: 4px;
+                height: 32px;
+                border-radius: 0 50% 50% 0;
+            }
+        }
+
+        .nav__link {
+            display: block;
+            font-family: "ttlakes-medium";
+            font-size: $fs-medium;
+            line-height: $line-height-medium;
+        }
+    }
+}
+
+.contacts {
+    margin-top: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mail {
+    font-family: "ttlakes-medium";
+    font-size: $fs-medium;
+    line-height: $line-height-medium;
+}
+
+.phone {
+    font-family: "ttlakes-bold";
+    font-size: $fs-medium;
+    line-height: $line-height-pre-bg;
+}
+
+.lang-list {
+    margin-top: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    &__btn {
+        font-size: $fs-medium;
+        line-height: $line-height-medium;
+        text-transform: uppercase;   
+        cursor: pointer;
+        
+        &.active,
+        &:hover {
+            color: $text-color-gray;
+        }
+    }
+}
+
+.body_burger {
+    position: relative;
+    overflow-y: hidden;
+
+    &:after {
+        content: '';
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 9;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    .header-mobile-menu .aside {
+        margin-top: $margin-top-32;
+    }
+}
+
+@media(max-width: 500px) {
+    .desktop-menu {
+        max-width: unset;
+        padding: 19px 16px 32px 16px;
+    }
+
+    .header-mobile-menu_open .logo {
+        margin-left: 16px;
+    }
+
+    .nav {
+        &_mobile {
+            margin-top: 22px;
+
+            .nav__item {
+                &.active {
+                    &:before {
+                        left: -16px;
+                    }
+                }
+
+                &:hover {
+                    &:before {
+                        left: -16px;
+                    }
+                }
+            }
+        }
+
+        &__list {
+            gap: 24px;
+        }
+    }
+
+    .lang-list {
+        margin-top: 8px;
+    }
+}

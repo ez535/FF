@@ -1,0 +1,56 @@
+@media(min-width: 768px) {
+    .header,
+    .main {
+        padding-left: $padding-left-24;
+        padding-right: $padding-right-24;
+    }
+
+    .main {
+        padding-bottom: 21px;
+    }
+
+    nav.hidden {
+        opacity: 1;
+        overflow: visible;
+        width: auto;
+        height: auto;
+        position: relative;
+    }
+
+    h3:before {
+        left: -24px;
+    }
+
+    .menu-cat::after {
+        right: -24px;
+    }
+
+    .menu-cat {
+        margin-top: $margin-top-32;
+    }
+
+    .img-post,
+    .text {
+        margin-top: unset;
+    }
+
+    .logo {
+        margin-left: 43px;
+    }
+
+    .burger {
+        position: relative;
+    }
+
+    .burger::after {
+        content: '';
+
+        width: 2px;
+        height: 32px;
+      
+        position: absolute;
+        right: -20px;
+        top: 5px;
+        background-color: $bg-color-light-gray;
+    }
+}

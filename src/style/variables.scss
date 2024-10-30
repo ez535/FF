@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  font-family: "ttlakes-regular";
+}
+
+ul {
+  padding-left: unset;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color-black;
+}
+
+button {
+  border: none;
+
+  background-color: transparent;
+}
+
+h3 {
+  font-family: "ttlakes-bold";
+  font-size: $fs-bg;
+  color: $text-color-black;
+  line-height: $line-height-bg;
+
+  position: relative;
+
+  &:before {
+    position: absolute;
+    left: -16px;
+    top: 0;
+  
+    background-color: $bg-color-before-h3;
+    width: 4px;
+    height: 40px;
+    border-radius: 0 50% 50% 0;
+  }
+}
+
+h4 {
+  color: var( --text-color-gray);
+  text-transform: uppercase;
+  font-size: $fs-medium;
+  line-height: $line-height-medium;
+}
+
+.read-more {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  cursor: pointer;
+
+  span {
+    font-family: "ttlakes-medium";
+    font-size: $fs-medium;
+    line-height: $line-height-medium;
+    color: $text-color-black;
+    font-weight: 600;
+  }
+}
+
+.show-more,
+.read-more {
+  margin-top: $margin-top-16;
+}
+
+.open {
+  height: max-content;
+  transition: all 1s ease-in;
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: $bg-color-gray;
+
+  display: flex;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 16px;
+  background-color: $bg-color-pink;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 100%;
+  max-height: 32px;
+  height: 100%;
+  margin-left: auto;
+
+  cursor: pointer;
+  transition: all .5s;
+
+  svg {
+    fill: $bg-color-white;
+  }
+
+  span {
+    font-size: $fs-most-small;
+    line-height: $line-height-medium;
+    color: $text-color-white;
+    font-family: "ttlakes-medium";
+  }
+
+  &:hover {
+    border: 1px solid $bg-color-pink;
+    background-color: transparent;
+
+    span {
+      color: $bg-color-pink;
+    }
+
+    svg {
+      fill: $bg-color-pink; 
+    }
+  }
+}
+
+.btn-pink {
+  background-color: $bg-color-pink;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  svg {
+    fill: $bg-color-white;
+  }
+
+  &:hover {
+    border: 1px solid $bg-color-pink;
+    background-color: transparent;
+
+    span {
+      color: $bg-color-pink;
+    }
+
+    svg {
+      fill: $bg-color-pink; 
+    }
+  }
+}
+
+.open-modal {
+  transform: translateX(0);
+  display: block;
+}
+
+button:focus-visible {
+  text-decoration: none;
+}
+
+.hidden {
+  opacity: -1;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  position: absolute;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.swiper:after {
+  content: '';
+  width: 24px;
+  height: 81px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+  z-index: 2;
+}
+
+.name {
+  background: linear-gradient(175deg, #F8F8F8 0%, #FFFFFF 98.61%);
+
+  padding: 16px 0 16px 32px;
+
+  border-top: 1px solid rgba(217, 255, 245, 1);
+}
+
+@media (max-width: 1440px) {
+  .name {
+    margin-right: -24px;
+  }
+}
